@@ -1,26 +1,26 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace KissSpecifications.Tests
 {
-	[TestClass]
+	[TestFixture]
 	public class SpecificationAttributeTest
 	{
-		[TestMethod]
+		[Test]
 		[ExpectedException(typeof(ArgumentNullException))]
 		public void Constructor_SpecificationIsNull_Exception()
 		{
 			new SpecificationAttribute(null);
 		}
 
-		[TestMethod]
+		[Test]
 		public void IsValid_ValueIsNull_False()
 		{
 			var target = new SpecificationAttribute(typeof(TestSatisfiedSpecification));
 			Assert.IsFalse(target.IsValid(null));
 		}
 
-		[TestMethod]
+		[Test]
 		[ExpectedException(typeof(InvalidOperationException))]
 		public void IsValid_NotISpecification_Exception()
 		{
@@ -28,7 +28,7 @@ namespace KissSpecifications.Tests
 			Assert.IsFalse(target.IsValid(1));
 		}
 
-		[TestMethod]
+		[Test]
 		public void IsValid_SpecificationIsNotSatisfied_FalseAndErrorMessageFilled()
 		{
 			var target = new SpecificationAttribute(typeof(TestNotSatisfiedSpecification));
@@ -36,7 +36,7 @@ namespace KissSpecifications.Tests
 			Assert.AreEqual("MSG", target.ErrorMessage);
 		}
 
-		[TestMethod]
+		[Test]
 		public void IsValid_SpecificationIsSatisfied_True()
 		{
 			var target = new SpecificationAttribute(typeof(TestSatisfiedSpecification));

@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KissSpecifications", "KissSpecifications\KissSpecifications.csproj", "{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KissSpecifications.UnitTests", "KissSpecifications.UnitTests\KissSpecifications.UnitTests.csproj", "{1E6F2296-507B-4A47-B573-39BB928FCEE2}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C3B426BA-7493-465D-8DB6-A0EB956470FF}"
 	ProjectSection(SolutionItems) = preProject
 		KissSpecifications.vsmdi = KissSpecifications.vsmdi
@@ -25,37 +23,42 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B6180D
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KissSpecifications.UnitTests", "KissSpecifications.UnitTests\KissSpecifications.UnitTests.csproj", "{46E1E1A9-36DA-4792-B7D0-78FA2F016DF3}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = KissSpecifications.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1E6F2296-507B-4A47-B573-39BB928FCEE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E6F2296-507B-4A47-B573-39BB928FCEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E6F2296-507B-4A47-B573-39BB928FCEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E6F2296-507B-4A47-B573-39BB928FCEE2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D1ED5C4B-B1F4-4016-887D-85F1B0455E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1ED5C4B-B1F4-4016-887D-85F1B0455E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1ED5C4B-B1F4-4016-887D-85F1B0455E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1ED5C4B-B1F4-4016-887D-85F1B0455E87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E1E1A9-36DA-4792-B7D0-78FA2F016DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E1E1A9-36DA-4792-B7D0-78FA2F016DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E1E1A9-36DA-4792-B7D0-78FA2F016DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E1E1A9-36DA-4792-B7D0-78FA2F016DF3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{740D7F07-B3E9-4E86-9D22-15CCD1E64321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{740D7F07-B3E9-4E86-9D22-15CCD1E64321}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{740D7F07-B3E9-4E86-9D22-15CCD1E64321}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{740D7F07-B3E9-4E86-9D22-15CCD1E64321}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+		{D1ED5C4B-B1F4-4016-887D-85F1B0455E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1ED5C4B-B1F4-4016-887D-85F1B0455E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1ED5C4B-B1F4-4016-887D-85F1B0455E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1ED5C4B-B1F4-4016-887D-85F1B0455E87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D1ED5C4B-B1F4-4016-887D-85F1B0455E87} = {FE872E77-32E9-42F0-943D-0E7C9BF338A6}
 		{740D7F07-B3E9-4E86-9D22-15CCD1E64321} = {FE872E77-32E9-42F0-943D-0E7C9BF338A6}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = KissSpecifications\KissSpecifications.csproj
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = KissSpecifications.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

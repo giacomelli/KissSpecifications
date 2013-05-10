@@ -47,6 +47,21 @@ namespace KissSpecifications
 				}
 			}
 		}
+
+		/// <summary>
+		/// If any specification was not satisfied by the any of target objects specified, a SpecificationNotSatisfiedException 
+		/// will be raide with NotSatisfiedReason for the first not satisfied specification.
+		/// </summary>
+		/// <typeparam name="TTarget">The type of object to be validate.</typeparam>
+		/// <param name="targets">The target objects to validate.</param>
+		/// <param name="specifications">The specifications to validate.</param>	
+		public static void ThrowIfAnySpecificationIsNotSatisfiedByAny<TTarget>(IEnumerable<TTarget> targets, params ISpecification<TTarget>[] specifications)
+		{
+			foreach (var target in targets)
+			{
+				ThrowIfAnySpecificationIsNotSatisfiedBy(target, specifications);
+			}
+		}
 		#endregion
 	}
 }
