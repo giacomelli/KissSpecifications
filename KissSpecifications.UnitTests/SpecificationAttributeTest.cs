@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace KissSpecifications.Tests
+namespace KissSpecifications.UnitTests
 {
 	[TestFixture]
 	public class SpecificationAttributeTest

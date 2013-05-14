@@ -3,7 +3,7 @@ using Rhino.Mocks;
 using NUnit.Framework;
 using TestSharp;
 
-namespace KissSpecifications.Tests
+namespace KissSpecifications.UnitTests
 {
 	[TestFixture]
 	public class SpecificationServiceTest
