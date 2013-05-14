@@ -38,10 +38,10 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="Ionic.Utils.Zip">
-      <HintPath>..\packages\TestSharp.1.0.0\lib\net40\Ionic.Utils.Zip.dll</HintPath>
+      <HintPath>..\packages\TestSharp.1.0.1\lib\net35\Ionic.Utils.Zip.dll</HintPath>
     </Reference>
     <Reference Include="TestSharp">
-      <HintPath>..\packages\TestSharp.1.0.0\lib\net40\TestSharp.dll</HintPath>
+      <HintPath>..\packages\TestSharp.1.0.1\lib\net35\TestSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
