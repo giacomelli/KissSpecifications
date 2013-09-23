@@ -5,5 +5,5 @@ install:
   - mozroots --import --sync
  
 script:
-  - xbuild ./msbuilds/TravisCI.Build.targets
+  - xbuild ./KissSpecifications.sln /property:Configuration=Debug;Platform=Any CPU
   - nunit-console ./KissSpecifications.UnitTests/bin/Debug/KissSpecifications.UnitTests.dll
