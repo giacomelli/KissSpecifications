@@ -111,3 +111,30 @@ public static class CustomerService
 }
 
 ```
+
+Best practices
+========
+Naming
+--------
+Let everyone know exactly what you are trying to specify! Create meaningful names for your specification classes.
+It will keep your code readable and easy to maintain.
+
+```csharp
+
+public static class CustomerService
+{
+
+	public static void CreateCustomer(Customer customer)
+	{
+		SpecificationService.ThrowIfAnySpecificationIsNotSatisfiedBy(
+			customer, 
+			new CustomerMustHaveNameSpecification(),
+			new CustomerMustHaveValidAccountSpecification(),
+			new CustomerMustHaveEmailSpecification(),
+			new CustomerCanNotHaveDebitSpecification());
+
+		// TODO: Logic to create customer...
+	}
+}
+
+```

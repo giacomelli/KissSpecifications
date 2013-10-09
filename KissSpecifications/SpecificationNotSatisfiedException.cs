@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 
 namespace KissSpecifications
@@ -14,7 +13,7 @@ namespace KissSpecifications
 		/// <summary>
 		/// Initializes a new <see cref="SpecificationNotSatisfiedException"/> instance.
 		/// </summary>
-		public SpecificationNotSatisfiedException()			
+		public SpecificationNotSatisfiedException()
 		{
 		}
 
@@ -42,9 +41,10 @@ namespace KissSpecifications
 		/// </summary>
 		/// <param name="serializationInfo">The serialization info.</param>
 		/// <param name="streamingContext">The streaming context.</param>
-		protected SpecificationNotSatisfiedException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext)
+		protected SpecificationNotSatisfiedException(SerializationInfo serializationInfo, StreamingContext streamingContext)
+			: base(serializationInfo, streamingContext)
 		{
-		
+
 		}
 		#endregion
 	}
