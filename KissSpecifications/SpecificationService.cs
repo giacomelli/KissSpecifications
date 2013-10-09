@@ -9,7 +9,7 @@ namespace KissSpecifications
 	{
 		#region Methods
 		/// <summary>
-		/// Filter the specified specifications considering only that are safisfied by target object.
+		/// Filter the specified specifications considering only that are not safisfied by target object.
 		/// </summary>
 		/// <typeparam name="TTarget">The type of object to be validate.</typeparam>
 		/// <param name="target">The target object to validate.</param>
@@ -32,7 +32,7 @@ namespace KissSpecifications
 
 		/// <summary>
 		/// If any specification was not satisfied by the target object specified, a SpecificationNotSatisfiedException 
-		/// will be raide with NotSatisfiedReason for the first not satisfied specification.
+		/// will be throw with NotSatisfiedReason for the first not satisfied specification.
 		/// </summary>
 		/// <typeparam name="TTarget">The type of object to be validate.</typeparam>
 		/// <param name="target">The target object to validate.</param>
@@ -50,7 +50,7 @@ namespace KissSpecifications
 
 		/// <summary>
 		/// If any specification was not satisfied by the any of target objects specified, a SpecificationNotSatisfiedException 
-		/// will be raide with NotSatisfiedReason for the first not satisfied specification.
+		/// will be throw with NotSatisfiedReason for the first not satisfied specification.
 		/// </summary>
 		/// <typeparam name="TTarget">The type of object to be validate.</typeparam>
 		/// <param name="targets">The target objects to validate.</param>
