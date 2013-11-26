@@ -48,8 +48,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Compile Include="Commons\MustNotHaveNullOrDefaultPropertySpecificationTest.cs" />
+    <Compile Include="Commons\MustHaveNullOrDefaultPropertySpecificationTest.cs" />
+    <Compile Include="Commons\MustNotHaveEmptyPropertyTextSpecificationTest.cs" />
     <Compile Include="SpecificationAttributeTest.cs" />
     <Compile Include="SpecificationServiceTest.cs" />
+    <Compile Include="Stubs\EntityStub.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KissSpecifications\KissSpecifications.csproj">

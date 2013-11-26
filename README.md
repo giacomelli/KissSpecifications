@@ -13,7 +13,17 @@ NuGet
 --------
 PM> Install-Package KissSpecifications
 
-
+Features
+========
+- ISpecification interface to define any kind of specification
+- SpecificationBase<TTarget> base class to easy create new specifications
+- SpecificationService
+- Commons specifications
+	- MustHaveNullOrDefaultPropertySpecification
+	- MustNotHaveEmptyPropertyTextSpecification
+	- MustNotHaveNullOrDefaultPropertySpecification
+- Globalization
+	- IGlobalizationResolver interface to define any kind of globalization for commons specifications  
 
 Using
 ========
