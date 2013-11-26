@@ -31,7 +31,7 @@ namespace KissSpecifications.Commons
 
         #region Constructors
         /// <summary>
-        /// Initializes a new instance of the <see cref="MustNotHaveNullOrDefaultPropertySpecification{TTarget}"/> class.
+        /// Initializes a new instance of the <see cref="T:MustNotHaveNullOrDefaultPropertySpecification`1"/> class.
         /// </summary>
         /// <param name="propertiesName">The properties name.</param>
         public MustNotHaveNullOrDefaultPropertySpecification(params string[] propertiesName)

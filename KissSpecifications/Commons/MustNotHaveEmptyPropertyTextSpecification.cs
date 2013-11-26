@@ -26,7 +26,7 @@ namespace KissSpecifications.Commons
 
         #region Constructors
         /// <summary>
-        /// Initializes a new instance of the <see cref="MustNotHaveEmptyPropertyTextSpecification{TTarget}"/> class.
+        /// Initializes a new instance of the <see cref="T:MustNotHaveEmptyPropertyTextSpecification`1"/> class.
         /// </summary>
         /// <param name="propertiesName">The properties name.</param>
         public MustNotHaveEmptyPropertyTextSpecification(params string[] propertiesName)
