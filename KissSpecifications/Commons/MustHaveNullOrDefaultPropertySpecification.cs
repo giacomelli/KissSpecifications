@@ -55,7 +55,7 @@ namespace KissSpecifications.Commons
             {
                 var propertyValue = target == null ? null : ReflectionHelper.GetPropertyValue(target, propertyName);
 
-                if (!IsNullOrDefault(propertyValue))
+                if (!ObjectHelper.IsNullOrDefault(propertyValue))
                 {
                     var globalizationResolver = KissSpecificationsConfig.GlobalizationResolver;
 
@@ -67,56 +67,7 @@ namespace KissSpecifications.Commons
             }
 
             return true;
-        }
-        
-        /// <summary>
-        /// Check if argument is null or default value of T type.
-        /// </summary>
-        /// <typeparam name="T">The type.</typeparam>
-        /// <param name="argument">The argument value.</param>
-        /// <returns>True if is null or default.</returns>
-        internal static bool IsNullOrDefault<T>(T argument)
-        {
-            // TODO: move to HelperSharp.
-            // deal with normal scenarios
-            if (argument == null)
-            {
-                return true;
-            }
-
-            if (object.Equals(argument, default(T)))
-            {
-                return true;
-            }
-
-            // deal with non-null nullables
-            Type methodType = typeof(T);
-            if (Nullable.GetUnderlyingType(methodType) != null)
-            {
-                return false;
-            }
-
-            Type argumentType = argument.GetType();
-
-            if (argumentType == typeof(string) && (argument as string) == String.Empty)
-            {
-                return true;
-            }
-
-            if (typeof(IList).IsAssignableFrom(argumentType) && (argument as IList).Count == 0)
-            {
-                return true;
-            }
-
-            // deal with boxed value types            
-            if (argumentType.IsValueType && argumentType != methodType)
-            {
-                object obj = Activator.CreateInstance(argument.GetType());
-                return obj.Equals(argument);
-            }
-
-            return false;
-        }
+        }               
         #endregion
     }
 }

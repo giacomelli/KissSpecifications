@@ -55,7 +55,7 @@ namespace KissSpecifications.Commons
             {
                 var propertyValue = target == null ? null : ReflectionHelper.GetPropertyValue(target, propertyName);
 
-                if (MustHaveNullOrDefaultPropertySpecification<TTarget>.IsNullOrDefault(propertyValue))
+                if (ObjectHelper.IsNullOrDefault(propertyValue))
                 {
                     var globalizationResolver = KissSpecificationsConfig.GlobalizationResolver;
 
