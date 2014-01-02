@@ -48,6 +48,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Compile Include="Commons\MustNotBeNullSpecificationTest.cs" />
     <Compile Include="Commons\MustNotHaveNullOrDefaultPropertySpecificationTest.cs" />
     <Compile Include="Commons\MustHaveNullOrDefaultPropertySpecificationTest.cs" />
     <Compile Include="Commons\MustNotHaveEmptyPropertyTextSpecificationTest.cs" />
