@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using HelperSharp;
 using KissSpecifications;
+using System.Linq.Expressions;
 
 namespace KissSpecifications.Commons
 {  
@@ -34,10 +35,49 @@ namespace KissSpecifications.Commons
         /// Initializes a new instance of the <see cref="T:MustNotHaveNullOrDefaultPropertySpecification`1"/> class.
         /// </summary>
         /// <param name="propertiesName">The properties name.</param>
-        public MustNotHaveNullOrDefaultPropertySpecification(params string[] propertiesName)
+		[Obsolete("Please, use the constructor with expression insted.")]
+		public MustNotHaveNullOrDefaultPropertySpecification(params string[] propertiesName)
         {
             m_propertiesName = propertiesName;
         }
+	
+		/// <summary>
+		/// Initializes a new instance of the
+		/// <see cref="T:MustNotHaveNullOrDefaultPropertySpecification`1"/> class.
+		/// </summary>
+		/// <param name="properties">The properties.</param>
+		public MustNotHaveNullOrDefaultPropertySpecification(params Expression<Func<TTarget, object>>[] properties)
+		{
+			m_propertiesName = new string[properties.Length];
+
+			for (int i = 0; i < m_propertiesName.Length; i++) 
+			{
+				var propertyExpression = GetMemberExpression (properties[i]);
+
+				if (propertyExpression == null) {
+					throw new InvalidOperationException ("The {0} is a invalid property expression.".With (properties [i]));
+				}
+
+				m_propertiesName [i] = propertyExpression.Member.Name;
+			}
+		}
+
+		// TODO: Move to HelperSharp
+		static MemberExpression GetMemberExpression (Expression<Func<TTarget, object>> expression)
+		{
+			var result = expression.Body as MemberExpression;
+
+			if (result == null) {
+				var convertExpression = expression.Body as UnaryExpression;
+
+				if (convertExpression != null) {
+					result = convertExpression.Operand as MemberExpression;
+				}
+			}
+
+			return result;
+		}
+
         #endregion
 
         #region Methods

@@ -12,7 +12,7 @@ namespace KissSpecifications.UnitTests.Commons
         [Test]
         public void IsSatisfiedBy_WithoutStringValue_False()
         {
-            var target = new MustNotHaveNullOrDefaultPropertySpecification<Exception>("Message");
+			var target = new MustNotHaveNullOrDefaultPropertySpecification<Exception>(t => t.Message);
             var entity = new Exception("");
 
             Assert.IsFalse(target.IsSatisfiedBy(entity));
@@ -22,7 +22,7 @@ namespace KissSpecifications.UnitTests.Commons
         [Test]
         public void IsSatisfiedBy_WithoutIntValue_False()
         {
-            var target = new MustNotHaveNullOrDefaultPropertySpecification<string>("Length");
+			var target = new MustNotHaveNullOrDefaultPropertySpecification<string>(t => t.Length);
             var entity = "";
 
             Assert.IsFalse(target.IsSatisfiedBy(entity));
@@ -32,7 +32,7 @@ namespace KissSpecifications.UnitTests.Commons
         [Test]
         public void IsSatisfiedBy_WithoutListValue_False()
         {
-            var target = new MustNotHaveNullOrDefaultPropertySpecification<EntityStub>("Children");
+			var target = new MustNotHaveNullOrDefaultPropertySpecification<EntityStub>(t => t.Children);
             var entity = new EntityStub() { Children = new List<int>()  };
 
             Assert.IsFalse(target.IsSatisfiedBy(entity));
@@ -42,31 +42,31 @@ namespace KissSpecifications.UnitTests.Commons
         [Test]
         public void IsSatisfiedBy_WithStringValueNotEmptyOrNull_True()
         {
-            var target = new MustNotHaveNullOrDefaultPropertySpecification<Exception>("Message");
-            var entity = new Exception("1");
-
-            Assert.IsTrue(target.IsSatisfiedBy(entity));
-            Assert.IsTrue(String.IsNullOrEmpty(target.NotSatisfiedReason));
+			var entity = new Exception("1");
+          
+			var target = new MustNotHaveNullOrDefaultPropertySpecification<Exception>(t => t.Message);
+			Assert.IsTrue(target.IsSatisfiedBy(entity));
+			Assert.IsTrue(String.IsNullOrEmpty(target.NotSatisfiedReason));
         }
 
         [Test]
         public void IsSatisfiedBy_WithIntValueNotEmptyOrNull_True()
-        {            
-            var target = new MustNotHaveNullOrDefaultPropertySpecification<string>("Length");
-            var entity = "1";
-
-            Assert.IsTrue(target.IsSatisfiedBy(entity));
-            Assert.IsTrue(String.IsNullOrEmpty(target.NotSatisfiedReason));
+        {   
+			var entity = "1";
+			         
+			var target = new MustNotHaveNullOrDefaultPropertySpecification<string>(t => t.Length);
+			Assert.IsTrue(target.IsSatisfiedBy(entity));
+			Assert.IsTrue(String.IsNullOrEmpty(target.NotSatisfiedReason));
         }
 
         [Test]
         public void IsSatisfiedBy_WithListValueNotEmptyOrNull_True()
         {
-            var target = new MustNotHaveNullOrDefaultPropertySpecification<EntityStub>("Children");
-            var entity = new EntityStub() { Children = new List<int>() { 1 }};
-
-            Assert.IsTrue(target.IsSatisfiedBy(entity));
-            Assert.IsTrue(String.IsNullOrEmpty(target.NotSatisfiedReason));
+			var entity = new EntityStub() { Children = new List<int>() { 1 }};
+     
+			var target = new MustNotHaveNullOrDefaultPropertySpecification<EntityStub>(t => t.Children);
+			Assert.IsTrue(target.IsSatisfiedBy(entity));
+			Assert.IsTrue(String.IsNullOrEmpty(target.NotSatisfiedReason));
         }
     }
 }
