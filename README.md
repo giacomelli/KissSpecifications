@@ -19,7 +19,8 @@ Features
 - SpecificationBase<TTarget> base class to easy create new specifications
 - SpecificationService
 - Commons specifications
-	- MustHaveNullOrDefaultPropertySpecification
+	- MustHaveNullOrDefaultPropertySpecification 
+	- MustNotBeNullSpecification 
 	- MustNotHaveEmptyPropertyTextSpecification
 	- MustNotHaveNullOrDefaultPropertySpecification
 - Globalization
@@ -31,7 +32,7 @@ Using
 
 ```csharp
 
-public class CustomerNameSpecification : SpecificationBase<string>
+public class CustomerMustHaveValidNameSpecification : SpecificationBase<string>
 {
 
 		#region Constants
@@ -63,44 +64,6 @@ public class CustomerNameSpecification : SpecificationBase<string>
 			return true;
 		}
 		#endregion
-}
-
-```
-
-```csharp
-
-public class CustomerNameSpecification : SpecificationBase<string>
-{
-
-	#region Constants
-	public const int MinCustomerName = 5;
-	public const int MaxCustomerName = 30;
-	#endregion
-
-	#region Methods
-	public override bool IsSatisfiedBy(string target)
-	{
-		if (String.IsNullOrWhiteSpace(target))
-		{
-			NotSatisfiedReason = "Customer name should be specified.";
-			return false;
-		}
-
-		if (target.Length < MinCustomerName)
-		{
-			NotSatisfiedReason = String.Format(CultureInfo.CurrentUICulture, "The minimum length for customer name is {0} chars.", MinCustomerName);
-			return false;
-		}
-
-		if (target.Length > MaxCustomerName)
-		{
-			NotSatisfiedReason = String.Format(CultureInfo.CurrentUICulture, "The maximum length for customer name is {0} chars.", MaxCustomerName);
-			return false;
-		}
-
-		return true;
-	}
-	#endregion
 }
 
 ```
