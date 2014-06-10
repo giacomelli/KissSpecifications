@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D1ED5C4B-B1F4-4016-887D-85F1B0455E87}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -46,6 +44,8 @@
     <Compile Include="CustomerNameSpecification.cs" />
     <Compile Include="CustomerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomerAgeSpecification.cs" />
+    <Compile Include="SampleSpecificationGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KissSpecifications\KissSpecifications.csproj">
