@@ -5,7 +5,6 @@ KissSpecifications
 A KISS approach for specification pattern.
 http://en.wikipedia.org/wiki/Specification_pattern
 
-
 Setup
 ========
 
@@ -15,9 +14,10 @@ PM> Install-Package KissSpecifications
 
 Features
 ========
-- ISpecification interface to define any kind of specification
-- SpecificationBase<TTarget> base class to easy create new specifications
-- SpecificationService
+- ISpecification : interface to define any kind of specification
+- SpecificationBase<TTarget> : base class to easy create new specifications
+- SpecificationService : Service class with features to validate specifications
+- SpecificationGroups : attribute to define groups for a specification
 - Commons specifications
 	- MustHaveNullOrDefaultPropertySpecification 
 	- MustNotBeNullSpecification 
@@ -78,6 +78,71 @@ public static class CustomerService
 	public static void CreateCustomer(Customer customer)
 	{
 		SpecificationService.ThrowIfAnySpecificationIsNotSatisfiedBy(customer, new CustomerCreationSpecification());
+
+		// TODO: Logic to create customer...
+	}
+}
+
+```
+
+Create Groups of specification
+========
+
+Defining groups
+--------
+You can use any object to declare a group key for your specification, but is always better to define constants or enumerators.
+
+```csharp
+
+/// <summary>
+/// Just a enum to define my specification groups.
+/// </summary>
+public enum SampleSpecificationGroup
+{
+	Save = 0,
+	SendEmail = 1,
+}
+
+
+[SpecificationGroups (SampleSpecificationGroup.Save, "Sell")]
+public class CustomerMustHaveNameSpecification : ISpecification<Customer>
+{
+	...
+}
+
+[SpecificationGroups (1, 5)]
+public class CustomerMustHaveValidAccountSpecification : ISpecification<Customer>
+{
+	...
+}
+
+[SpecificationGroups (SampleSpecificationGroup.SendEmail)]
+public class CustomerMustHaveEmailSpecification : ISpecification<Customer>
+{
+	...
+}
+
+[SpecificationGroups (Constants.AConstantValue, "Sell", 1)]
+public class CustomerCanNotHaveDebitSpecification : ISpecification<Customer>
+{
+	...
+}
+
+```
+
+Validate
+--------
+
+* Call the SpecificationService on your Domain method defining groups that you want to validate:
+
+```csharp
+
+public static class CustomerService
+{
+
+	public static void CreateCustomer(Customer customer)
+	{
+		SpecificationService.ThrowIfAnySpecificationIsNotSatisfiedBy(customer, SampleSpecificationGroup.Save);
 
 		// TODO: Logic to create customer...
 	}

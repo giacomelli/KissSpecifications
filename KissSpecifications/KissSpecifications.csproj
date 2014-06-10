@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -62,6 +60,7 @@
     <Compile Include="SpecificationNotSatisfiedException.cs" />
     <Compile Include="SpecificationService.cs" />
     <Compile Include="Suppressions.cs" />
+    <Compile Include="SpecificationGroupsAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="KissSpecifications.cd" />

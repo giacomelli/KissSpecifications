@@ -3,10 +3,12 @@ using System.Globalization;
 
 namespace KissSpecifications.Samples.Domain
 {
+	[SpecificationGroups ("Sell")]
 	public class CustomerCreationSpecification : SpecificationBase<Customer>
 	{
 		#region Methods
-		public override bool IsSatisfiedBy(Customer target)
+
+		public override bool IsSatisfiedBy (Customer target)
 		{
 			if (target == null)
 			{
@@ -14,9 +16,9 @@ namespace KissSpecifications.Samples.Domain
 				return false;
 			}
 
-			var nameSpec = new CustomerNameSpecification();
+			var nameSpec = new CustomerNameSpecification ();
 
-			if (!nameSpec.IsSatisfiedBy(target.Name))
+			if (!nameSpec.IsSatisfiedBy (target.Name))
 			{
 				NotSatisfiedReason = nameSpec.NotSatisfiedReason;
 				return false;
@@ -24,6 +26,7 @@ namespace KissSpecifications.Samples.Domain
 
 			return true;
 		}
+
 		#endregion
 	}
 }
