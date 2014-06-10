@@ -176,3 +176,24 @@ public static class CustomerService
 }
 
 ```
+
+License
+======
+
+Licensed under the The MIT License (MIT).
+In others words, you can use this library for developement any kind of software: open source, commercial, proprietary and alien.
+
+
+Change Log
+======
+ - 1.1.6 Added specification groups feature.
+ - 1.1.5 Added MustNotBeNullSpecification.
+ - 1.1.4 
+	* KissSpecificationsConfig
+	* IGlobalizationProvider
+	* Commons specifications
+		* MustHaveNullOrDefaultPropertySpecification
+		* MustNotHaveEmptyPropertyTextSpecification
+		* MustNotHaveNullOrDefaultPropertySpecification
+ - 1.1.0 Added SpecificationService.ThrowIfAnySpecificationIsNotSatisfiedByAny.
+ - 1.0.0 First version.
