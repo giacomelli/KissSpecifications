@@ -9,7 +9,7 @@ using KissSpecifications;
 using System.Linq.Expressions;
 
 namespace KissSpecifications.Commons
-{  
+{
     /// <summary>
     ///  Target must not have the specified property with a null value or default value.
     /// </summary>
@@ -35,48 +35,33 @@ namespace KissSpecifications.Commons
         /// Initializes a new instance of the <see cref="T:MustNotHaveNullOrDefaultPropertySpecification`1"/> class.
         /// </summary>
         /// <param name="propertiesName">The properties name.</param>
-		[Obsolete("Please, use the constructor with expression insted.")]
-		public MustNotHaveNullOrDefaultPropertySpecification(params string[] propertiesName)
+        [Obsolete("Please, use the constructor with expression insted.")]
+        public MustNotHaveNullOrDefaultPropertySpecification(params string[] propertiesName)
         {
             m_propertiesName = propertiesName;
         }
-	
-		/// <summary>
-		/// Initializes a new instance of the
-		/// <see cref="T:MustNotHaveNullOrDefaultPropertySpecification`1"/> class.
-		/// </summary>
-		/// <param name="properties">The properties.</param>
-		public MustNotHaveNullOrDefaultPropertySpecification(params Expression<Func<TTarget, object>>[] properties)
-		{
-			m_propertiesName = new string[properties.Length];
 
-			for (int i = 0; i < m_propertiesName.Length; i++) 
-			{
-				var propertyExpression = GetMemberExpression (properties[i]);
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="T:MustNotHaveNullOrDefaultPropertySpecification`1"/> class.
+        /// </summary>
+        /// <param name="properties">The properties.</param>
+        public MustNotHaveNullOrDefaultPropertySpecification(params Expression<Func<TTarget, object>>[] properties)
+        {
+            m_propertiesName = new string[properties.Length];
 
-				if (propertyExpression == null) {
-					throw new InvalidOperationException ("The {0} is a invalid property expression.".With (properties [i]));
-				}
+            for (int i = 0; i < m_propertiesName.Length; i++)
+            {
+                var propertyExpression = ExpressionHelper.GetMemberExpression(properties[i]);
 
-				m_propertiesName [i] = propertyExpression.Member.Name;
-			}
-		}
+                if (propertyExpression == null)
+                {
+                    throw new InvalidOperationException("The {0} is a invalid property expression.".With(properties[i]));
+                }
 
-		// TODO: Move to HelperSharp
-		static MemberExpression GetMemberExpression (Expression<Func<TTarget, object>> expression)
-		{
-			var result = expression.Body as MemberExpression;
-
-			if (result == null) {
-				var convertExpression = expression.Body as UnaryExpression;
-
-				if (convertExpression != null) {
-					result = convertExpression.Operand as MemberExpression;
-				}
-			}
-
-			return result;
-		}
+                m_propertiesName[i] = propertyExpression.Member.Name;
+            }
+        }
 
         #endregion
 
@@ -107,7 +92,7 @@ namespace KissSpecifications.Commons
             }
 
             return true;
-        }        
+        }
         #endregion
     }
 }
