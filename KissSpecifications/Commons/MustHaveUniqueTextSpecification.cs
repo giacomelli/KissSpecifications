@@ -24,7 +24,7 @@ namespace KissSpecifications.Commons
 
         #region Constructors
         /// <summary>
-        /// Initializes a new instance of the <see cref="MustHaveUniqueTextSpecification{TTarget}"/> class.
+        /// Initializes a new instance of the <see cref="T:MustHaveUniqueTextSpecification`1"/> class.
         /// </summary>
         /// <param name="getProperty">The text property that must have a unique value.</param>
         /// <param name="getByName">The function used to find other target with the same text property value.</param>
