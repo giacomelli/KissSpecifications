@@ -29,6 +29,10 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HelperSharp, Version=1.0.5310.16532, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HelperSharp.0.0.3.7\lib\net35\HelperSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="Rhino.Mocks">
       <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
@@ -47,6 +51,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Compile Include="Commons\MustNotBeNullSpecificationTest.cs" />
+    <Compile Include="Commons\MustHaveUniqueNameSpecificationTest.cs" />
     <Compile Include="Commons\MustNotHaveNullOrDefaultPropertySpecificationTest.cs" />
     <Compile Include="Commons\MustHaveNullOrDefaultPropertySpecificationTest.cs" />
     <Compile Include="Commons\MustNotHaveEmptyPropertyTextSpecificationTest.cs" />

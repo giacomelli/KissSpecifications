@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using KissSpecifications.Commons;
-using KissSpecifications.UnitTests.Stubs;
 using NUnit.Framework;
 
 namespace KissSpecifications.UnitTests.Commons
@@ -13,7 +11,7 @@ namespace KissSpecifications.UnitTests.Commons
         public void IsSatisfiedBy_Null_False()
         {
             var target = new MustNotBeNullSpecification<Exception>();
-            
+
             Assert.IsFalse(target.IsSatisfiedBy(null));
             Assert.AreEqual("The 'Exception' must not be null.", target.NotSatisfiedReason);
         }

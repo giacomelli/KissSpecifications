@@ -46,6 +46,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commons\MustHaveUniqueTextSpecification.cs" />
     <Compile Include="Commons\MustNotBeNullSpecification.cs" />
     <Compile Include="Commons\MustNotHaveNullOrDefaultPropertySpecification.cs" />
     <Compile Include="Commons\MustHaveNullOrDefaultPropertySpecification.cs" />
