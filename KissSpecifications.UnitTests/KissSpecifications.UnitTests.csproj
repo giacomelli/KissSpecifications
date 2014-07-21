@@ -50,6 +50,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Compile Include="Commons\MustExistsSpecificationTest.cs" />
     <Compile Include="Commons\MustNotBeNullSpecificationTest.cs" />
     <Compile Include="Commons\MustHaveUniqueNameSpecificationTest.cs" />
     <Compile Include="Commons\MustNotHaveNullOrDefaultPropertySpecificationTest.cs" />

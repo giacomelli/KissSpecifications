@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq.Expressions;
 using HelperSharp;
 
 namespace KissSpecifications.Commons
@@ -18,8 +19,8 @@ namespace KissSpecifications.Commons
         #endregion
 
         #region Fields
-        private Func<TTarget, string> m_getProperty;
-        private Func<string, TTarget> m_getByName;
+        private Expression<Func<TTarget, string>> m_getProperty;
+        private Expression<Func<string, TTarget>> m_getByName;
         #endregion
 
         #region Constructors
@@ -28,7 +29,7 @@ namespace KissSpecifications.Commons
         /// </summary>
         /// <param name="getProperty">The text property that must have a unique value.</param>
         /// <param name="getByName">The function used to find other target with the same text property value.</param>
-        public MustHaveUniqueTextSpecification(Func<TTarget, string> getProperty, Func<string, TTarget> getByName)
+        public MustHaveUniqueTextSpecification(Expression<Func<TTarget, string>> getProperty, Expression<Func<string, TTarget>> getByName)
         {
             m_getProperty = getProperty;
             m_getByName = getByName;
@@ -47,9 +48,9 @@ namespace KissSpecifications.Commons
         [SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
         public override bool IsSatisfiedBy(TTarget target)
         {
-            var name = m_getProperty(target);
+            var name = m_getProperty.Compile()(target);
 
-            var otherEntityWithSameName = m_getByName(name);
+            var otherEntityWithSameName = m_getByName.Compile()(name);
 
             if (otherEntityWithSameName != null && !otherEntityWithSameName.Equals(target))
             {
