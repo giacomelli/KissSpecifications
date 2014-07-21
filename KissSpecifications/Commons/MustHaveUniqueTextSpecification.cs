@@ -47,8 +47,6 @@ namespace KissSpecifications.Commons
         [SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
         public override bool IsSatisfiedBy(TTarget target)
         {
-            var entityType = typeof(TTarget);
-            var entityName = typeof(TTarget).Name;
             var name = m_getProperty(target);
 
             var otherEntityWithSameName = m_getByName(name);
