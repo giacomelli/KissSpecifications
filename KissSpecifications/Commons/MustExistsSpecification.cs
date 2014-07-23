@@ -25,7 +25,7 @@ namespace KissSpecifications.Commons
 
         #region Constructors
         /// <summary>
-        /// Initializes a new instance of the <see cref="MustExistsSpecification{TTarget, TProperty}"/> class.
+        /// Initializes a new instance of the <see cref="T:MustExistsSpecification`2"/> class.
         /// </summary>
         /// <param name="property">The property.</param>
         /// <param name="exists">The function to verify if property value exists.</param>
@@ -48,11 +48,11 @@ namespace KissSpecifications.Commons
         {
             var propertyValue = m_property.Compile()(target);
 
-            if (!m_exists.Compile()((TProperty) propertyValue))
+            if (!m_exists.Compile()((TProperty)propertyValue))
             {
                 var globalizationResolver = KissSpecificationsConfig.GlobalizationResolver;
                 var memberExpression = ExpressionHelper.GetMemberExpression(m_property);
-                
+
                 NotSatisfiedReason = globalizationResolver
                     .GetText(NotSatisfiedReasonText)
                     .With(globalizationResolver.GetText(memberExpression.Member.Name), propertyValue);
