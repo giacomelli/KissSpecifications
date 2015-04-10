@@ -186,6 +186,7 @@ In others words, you can use this library for developement any kind of software:
 
 Change Log
 ======
+ - 1.1.9 HelperSharp updated.
  - 1.1.8 Added MustExistsSpecification.
  - 1.1.7 Added MustHaveUniqueTextSpecification.
  - 1.1.6 Added specification groups feature.
