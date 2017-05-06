@@ -1,6 +1,5 @@
 KissSpecifications
 ==================
-[![Build Status](https://travis-ci.org/giacomelli/KissSpecifications.png?branch=master)](https://travis-ci.org/giacomelli/KissSpecifications)
 
 A KISS approach for specification pattern.
 http://en.wikipedia.org/wiki/Specification_pattern
