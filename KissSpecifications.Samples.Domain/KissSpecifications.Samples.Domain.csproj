@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KissSpecifications\KissSpecifications.csproj">
-      <Project>{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}</Project>
+      <Project>{94f64ede-b49d-4b5f-951b-97e6c1cfa840}</Project>
       <Name>KissSpecifications</Name>
     </ProjectReference>
   </ItemGroup>
