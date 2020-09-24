@@ -29,9 +29,8 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HelperSharp, Version=1.0.5560.27038, Culture=neutral, PublicKeyToken=3d44152485e1a4e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\HelperSharp.0.0.4.2\lib\net35\HelperSharp.dll</HintPath>
+    <Reference Include="HelperSharp, Version=0.0.5.0, Culture=neutral, PublicKeyToken=3d44152485e1a4e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\HelperSharp.0.0.5\lib\net40\HelperSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Rhino.Mocks">
@@ -61,13 +60,13 @@
     <Compile Include="Stubs\EntityStub.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KissSpecifications\KissSpecifications.csproj">
-      <Project>{D5DA4C33-9E0B-40AF-AB9C-621AAF8FCEEC}</Project>
-      <Name>KissSpecifications</Name>
-    </ProjectReference>
     <ProjectReference Include="..\KissSpecifications.Samples.Domain\KissSpecifications.Samples.Domain.csproj">
       <Project>{D1ED5C4B-B1F4-4016-887D-85F1B0455E87}</Project>
       <Name>KissSpecifications.Samples.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KissSpecifications\KissSpecifications.csproj">
+      <Project>{94f64ede-b49d-4b5f-951b-97e6c1cfa840}</Project>
+      <Name>KissSpecifications</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
